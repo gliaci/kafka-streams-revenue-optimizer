@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: kafka-streams-revenue-optimizer
+  kafka:
+    bootstrap-servers: localhost:29092
+    streams:
+      application-id: kafka-streams-revenue-optimizer
+      properties:
+        default:
+          key.serde: org.apache.kafka.common.serialization.Serdes$LongSerde
+
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    org.apache.kafka: WARN
+    com.lastminute: INFO
+
+revenue-optimizer:
+  kafka:
+    topics:
+      exchange-rates: "mysql-masterdata-EXCHANGE_RATE"
+      orders: "orders"
+      retrieved-pnrs: "retrieved-pnrs"
+      optimized-orders: "optimized-orders"
