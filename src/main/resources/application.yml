@@ -14,12 +14,12 @@ logging:
     root: ERROR
     org.springframework.web: ERROR
     org.apache.kafka: WARN
-    com.lastminute: INFO
+    com.gliaci: INFO
 
 revenue-optimizer:
   kafka:
     topics:
       exchange-rates: "mysql-masterdata-EXCHANGE_RATE"
       orders: "orders"
-      retrieved-pnrs: "retrieved-pnrs"
+      provider-codes: "provider-codes"
       optimized-orders: "optimized-orders"

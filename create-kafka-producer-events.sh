@@ -9,6 +9,6 @@ echo "Waiting 10 seconds..."
 sleep 10
 
 echo
-echo "Creating event to retrieved-pnrs topic"
+echo "Creating event to provider-codes topic"
 echo "------------------------------------"
-kafka-console-producer --broker-list localhost:29092 --topic retrieved-pnrs --property "parse.key=true" --property "key.separator=," < events/retrievedPnrEvent.txt
+kafka-console-producer --broker-list localhost:29092 --topic provider-codes --property "parse.key=true" --property "key.separator=," < events/providerCodeEvent.txt

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OrderStreamConfiguration {
 
-  public record Order(Long orderId, String pnr, Double amount, String currency) {}
+  public record Order(Long orderId, String providerCode, Double amount, String currency) {}
 
   @Bean
   public JSONSerde<Order> orderSerde() {

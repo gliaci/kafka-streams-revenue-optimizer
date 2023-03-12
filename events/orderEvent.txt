@@ -1,1 +1,1 @@
-12345678,{"orderId":12345678,"pnr":"ABCD","amount":100.00,"currency":"EUR"}
+12345678,{"orderId":12345678,"providerCode":"ABCD","amount":100.00,"currency":"EUR"}

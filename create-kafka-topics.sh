@@ -11,9 +11,9 @@ echo "------------------------------------"
 docker exec -t zookeeper kafka-topics --create --bootstrap-server kafka:9092 --replication-factor 1 --partitions 2 --topic orders
 
 echo
-echo "Creating topic retrieved-pnrs"
+echo "Creating topic provider-codes"
 echo "------------------------------------"
-docker exec -t zookeeper kafka-topics --create --bootstrap-server kafka:9092 --replication-factor 1 --partitions 2 --topic retrieved-pnrs
+docker exec -t zookeeper kafka-topics --create --bootstrap-server kafka:9092 --replication-factor 1 --partitions 2 --topic provider-codes
 
 echo
 echo "Creating topic optimized-orders"

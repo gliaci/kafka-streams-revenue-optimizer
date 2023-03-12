@@ -10,19 +10,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RetrievedPnrStreamConfiguration {
-  public record RetrievedPnr(Long orderId, String pnr, Double amount, String currency) {}
+public class ProviderCodeStreamConfiguration
+{
+  public record ProviderCode(Long orderId, String providerCode, Double amount, String currency) {}
 
   @Bean
-  public JSONSerde<RetrievedPnr> retrievedPnrSerde() {
-    return new JSONSerde<>(RetrievedPnr.class);
+  public JSONSerde<ProviderCode> providerCodeSerde() {
+    return new JSONSerde<>(ProviderCode.class);
   }
 
   @Bean
-  public KStream<Long, RetrievedPnr> retrievedPnrsKStream(
+  public KStream<Long, ProviderCode> providerCodesKStream(
       StreamsBuilder builder,
-      JSONSerde<RetrievedPnr> retrievedPnrSerde,
-      @Value("${revenue-optimizer.kafka.topics.retrieved-pnrs}") String retrievedPnrsTopic) {
-    return builder.stream(retrievedPnrsTopic, Consumed.with(Serdes.Long(), retrievedPnrSerde));
+      JSONSerde<ProviderCode> providerCodeSerde,
+      @Value("${revenue-optimizer.kafka.topics.provider-codes}") String providerCodesTopic) {
+    return builder.stream(providerCodesTopic, Consumed.with(Serdes.Long(), providerCodeSerde));
   }
 }
